@@ -1,0 +1,13 @@
+{
+  "name": "@simbisa/shared",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  }
+}
