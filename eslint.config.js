@@ -39,6 +39,11 @@ export default [
     },
   },
   {
+    // shadcn/ui primitives export variant helpers next to components by design.
+    files: ['frontend/src/components/ui/**/*.{js,jsx}'],
+    rules: { 'react-refresh/only-export-components': 'off' },
+  },
+  {
     files: ['backend/**/*.js', 'shared/**/*.js', '*.config.js', 'frontend/vite.config.js'],
     languageOptions: { globals: globals.node },
   },

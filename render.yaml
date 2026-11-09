@@ -1,0 +1,38 @@
+# Render Blueprint: deploys the backend and frontend from this single repo.
+# Both services build from the repo root because the project uses npm workspaces.
+services:
+  - type: web
+    name: simbisa-backend
+    runtime: node
+    plan: starter # reports run in-process for up to 20 min; free instances sleep/restart
+    buildCommand: npm ci
+    startCommand: npm run start -w @simbisa/backend
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGIN # exact frontend origin, e.g. https://simbisa-frontend.onrender.com
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: GAAP_API_KEY
+        sync: false
+      - key: GAAP_API_BASE_URL
+        sync: false
+
+  - type: web
+    name: simbisa-frontend
+    runtime: static
+    buildCommand: npm ci && npm run build -w @simbisa/frontend
+    staticPublishPath: frontend/dist
+    routes:
+      - type: rewrite # SPA fallback for react-router
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: VITE_API_BASE_URL # baked in at build time, e.g. https://simbisa-backend.onrender.com/api/v1
+        sync: false

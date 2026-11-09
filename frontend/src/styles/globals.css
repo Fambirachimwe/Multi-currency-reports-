@@ -1,0 +1,137 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/*
+ * Single source of truth for visual tokens (context/ui-context.md).
+ * The app is dark-only: there is no light theme and no theme toggle.
+ * Components must use the semantic Tailwind utilities generated below
+ * (bg-surface, text-muted, border-border, bg-primary, ...) — never raw hex.
+ */
+:root {
+  color-scheme: dark;
+
+  /* ui-context.md palette */
+  --bg-base: #363640;
+  --bg-sidebar: #363640;
+  --bg-surface: #3e3e47;
+  --bg-hover: #484852;
+  --bg-selected: #414b59;
+  --bg-overlay: #303039;
+  --text-primary: #f5f5f7;
+  --text-secondary: #d3d3db;
+  --text-muted: #b0b4c3;
+  --accent-primary: #00a9f4;
+  --accent-hover: #39bdfb;
+  --accent-foreground: #101a24;
+  --border-default: #50505c;
+  --border-strong: #656573;
+  --state-error: #f87171;
+  --state-success: #4ade80;
+  --state-warning: #fbbf24;
+  --currency-usd: #4ade80;
+  --currency-zwg: #60a5fa;
+
+  /* shadcn/ui theme variables, mapped onto the palette above */
+  --background: var(--bg-base);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-overlay);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent-primary);
+  --primary-foreground: var(--accent-foreground);
+  --secondary: var(--bg-surface);
+  --secondary-foreground: var(--text-secondary);
+  --muted: var(--bg-surface);
+  --muted-foreground: var(--text-muted);
+  --accent: var(--bg-hover);
+  --accent-foreground-shadcn: var(--text-primary);
+  --destructive: var(--state-error);
+  --border: var(--border-default);
+  --input: var(--border-default);
+  --ring: var(--accent-primary);
+  --sidebar: var(--bg-sidebar);
+  --sidebar-foreground: var(--text-secondary);
+  --sidebar-primary: var(--accent-primary);
+  --sidebar-primary-foreground: var(--accent-foreground);
+  --sidebar-accent: var(--bg-selected);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-default);
+  --sidebar-ring: var(--accent-primary);
+
+  --radius: 0.375rem;
+}
+
+@theme inline {
+  --font-sans: Inter, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* shadcn/ui semantic colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground-shadcn);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Project-specific semantic colors from ui-context.md */
+  --color-surface: var(--bg-surface);
+  --color-hover: var(--bg-hover);
+  --color-selected: var(--bg-selected);
+  --color-overlay: var(--bg-overlay);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  --color-border-strong: var(--border-strong);
+  --color-error: var(--state-error);
+  --color-success: var(--state-success);
+  --color-warning: var(--state-warning);
+  --color-currency-usd: var(--currency-usd);
+  --color-currency-zwg: var(--currency-zwg);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans text-sm antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+}
