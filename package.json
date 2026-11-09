@@ -32,5 +32,8 @@
     "eslint-plugin-react-refresh": "^0.5.7",
     "globals": "^17.14.0",
     "prettier": "^3.9.10"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.3.0"
   }
 }
