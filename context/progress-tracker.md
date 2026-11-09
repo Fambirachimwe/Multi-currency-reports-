@@ -917,6 +917,6 @@ Automated cases covered: health 200 and exact payload keys; request ID generatio
 - Generate Report page has a Cancel button while submitting/pending; cancelling during the POST waits for the report id, then deletes it.
 
 ## Railway deployment prep (2026-11-09)
-- Added `railway.json` (build `npm run build`, start `node scripts/start.js`). Single service: backend on a private port, built frontend served on Railway's `PORT` with `/api` proxied.
+- (Superseded) single-service Railway setup via scripts/start.js, since removed.
 - README "Render deployment" replaced by "Railway deployment (via GitHub)"; `backend/.env.example` wording updated. Required variables: `MONGODB_URI`, `GAAP_API_KEY`, `GAAP_API_BASE_URL`, `CORS_ORIGIN` (public origin).
-- Switched to two Railway services: `railway.json` replaced by `railway.backend.json` and `railway.frontend.json` (set per service under Config-as-code). Frontend needs build-time `VITE_API_BASE_URL` = backend URL + `/api/v1`; backend `CORS_ORIGIN` = frontend origin. `scripts/start.js` kept for single-service use.
+- Switched to two Railway services: `railway.json` replaced by `railway.backend.json` and `railway.frontend.json` (set per service under Config-as-code). Frontend needs build-time `VITE_API_BASE_URL` = backend URL + `/api/v1`; backend `CORS_ORIGIN` = frontend origin. `scripts/start.js` and the root `npm start` script removed so a service can never start both apps.

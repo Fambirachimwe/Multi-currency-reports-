@@ -47,14 +47,14 @@ Run one app on its own with `npm run dev:frontend` or `npm run dev:backend`.
 
 ## Workspace scripts
 
-| Command                                   | What it does                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------- |
-| `npm run dev`                             | Start backend and frontend in watch mode                            |
-| `npm start`                               | Start the backend without watch mode                                |
-| `npm run lint`                            | ESLint across all workspaces (one shared config)                    |
-| `npm run format` / `npm run format:check` | Prettier write / check                                              |
-| `npm test`                                | Vitest (frontend) and `node --test` (backend)                       |
-| `npm run build`                           | Build every workspace that defines a build (currently the frontend) |
+| Command                                   | What it does                                                                                         |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `npm run dev`                             | Start backend and frontend in watch mode                                                             |
+| `npm run start:backend`                   | Start the backend without watch mode (the frontend has its own `npm run start -w @simbisa/frontend`) |
+| `npm run lint`                            | ESLint across all workspaces (one shared config)                                                     |
+| `npm run format` / `npm run format:check` | Prettier write / check                                                                               |
+| `npm test`                                | Vitest (frontend) and `node --test` (backend)                                                        |
+| `npm run build`                           | Build every workspace that defines a build (currently the frontend)                                  |
 
 ## Backend API
 
@@ -143,8 +143,6 @@ One GitHub repo, two Railway services (backend and frontend), both built from th
 6. Reports run in-process for up to 20 minutes, so run a single always-on backend replica and avoid sleep/serverless settings, which would interrupt them.
 7. Access must be restricted at the infrastructure level before exposure. v1 has no application authentication, and a public `up.railway.app` URL is not access control.
 8. Every push to the connected branch redeploys both services.
-
-`scripts/start.js` (backend plus built frontend in one process, `/api` proxied) is kept for single-service hosting or local production runs; the two-service setup does not use it.
 
 ### Hybrid cache layer
 

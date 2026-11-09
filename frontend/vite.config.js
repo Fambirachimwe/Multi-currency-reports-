@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     // Production: `vite preview` serves frontend/dist on the host's public PORT and proxies
-    // /api to the backend (see scripts/start.js). allowedHosts is open because the public
+    // /api to the backend. allowedHosts is open because the public
     // hostname (e.g. *.onrender.com) is not known at build time.
     preview: {
       host: true,
