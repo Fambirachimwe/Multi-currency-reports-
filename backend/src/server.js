@@ -96,8 +96,9 @@ try {
   await connectDatabase(databaseConfig);
   await ensureModelIndexes();
 } catch (error) {
-  // Connection errors are already logged with the error class only.
-  logger.error('Startup aborted', { errorMessage: error.message });
+  // Connection errors are already logged with the error class only. Index-creation errors
+  // carry server messages (no credentials), so the reason goes in the visible log text too.
+  logger.error(`Startup aborted: ${error.message}`, { errorName: error.name });
   process.exit(1);
 }
 
