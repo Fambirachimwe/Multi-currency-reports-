@@ -915,3 +915,7 @@ Automated cases covered: health 200 and exact payload keys; request ID generatio
 ## Cancel report generation (2026-11-09)
 - New `DELETE /api/v1/reports/:reportId` cancels a PENDING report: aborts its job (abort reason `cancelled`), deletes the report and any rows, so a cancelled report is never saved. Completed/failed reports answer 409 REPORT_NOT_CANCELLABLE. Wired via `execution.cancelReport` -> `service.cancelReport` -> `repository.discardPending`.
 - Generate Report page has a Cancel button while submitting/pending; cancelling during the POST waits for the report id, then deletes it.
+
+## Railway deployment prep (2026-11-09)
+- Added `railway.json` (build `npm run build`, start `node scripts/start.js`, health check `/api/v1/health`). Single service: backend on a private port, built frontend served on Railway's `PORT` with `/api` proxied.
+- README "Render deployment" replaced by "Railway deployment (via GitHub)"; `backend/.env.example` wording updated. Required variables: `MONGODB_URI`, `GAAP_API_KEY`, `GAAP_API_BASE_URL`, `CORS_ORIGIN` (public origin).

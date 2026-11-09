@@ -131,19 +131,22 @@ React 19 + Vite + React Router + Tailwind CSS v4 + shadcn/ui (JavaScript, dark-o
 - Browser requests go through `frontend/src/lib/api-client.js` to the app's own `/api/v1` only. Never put secrets in `VITE_*` variables.
 - Add shadcn/ui primitives under `frontend/src/components/ui/` (config: `frontend/components.json`).
 
-## Render deployment
+## Railway deployment (via GitHub)
 
-One GitHub repo, two Render services, defined by the root `render.yaml` blueprint. Both build from the repo root because the project uses npm workspaces.
+One GitHub repo, one Railway service. [`railway.json`](railway.json) builds from the repo root (npm workspaces) with `npm run build`, then runs `node scripts/start.js`. That script starts the Express backend on a private port and serves the built frontend on Railway's public `PORT`, proxying `/api` to the backend, so the browser sees a single origin and the default `VITE_API_BASE_URL=/api/v1` works unchanged.
 
 1. Push the repo to GitHub (`.env` files and `sample.js` are gitignored; check `git status` first).
-2. In Render choose **New → Blueprint** and select the repo. It creates `simbisa-backend` (Node web service, `npm run start -w @simbisa/backend`, health check `/api/v1/health`) and `simbisa-frontend` (static site, publishes `frontend/dist`, SPA rewrite to `index.html`).
-3. Set the secret variables in the Render dashboard (they are `sync: false` in the blueprint):
-   - Backend: `MONGODB_URI` (MongoDB Atlas; allow Render in Atlas Network Access), `GAAP_API_KEY`, `GAAP_API_BASE_URL`, `CORS_ORIGIN`.
-   - Frontend: `VITE_API_BASE_URL`.
-4. `CORS_ORIGIN` is the exact frontend origin (e.g. `https://simbisa-frontend.onrender.com`, no trailing slash or path); the backend refuses to start in production without it. `VITE_API_BASE_URL` is the backend URL plus `/api/v1`, and is baked in at build time, so redeploy the frontend after changing it.
-5. Optional backend variables (`GAAP_TIMEOUT_MS`, `GAAP_MAX_CONCURRENCY`, `REPORT_*`, cache settings) are documented in `backend/.env.example`. `GAAP_TIMEOUT_MS` defaults to 30 s, and GAAP `/sales` pages have been observed taking about 35 s, so raise it if reports fail with timeouts.
-6. Reports run in-process for up to 20 minutes, so the backend uses the `starter` plan; a free instance sleeps and would interrupt them.
-7. Access must be restricted at the infrastructure level before exposure. v1 has no application authentication, and a public `onrender.com` URL is not access control.
+2. In Railway choose **New Project → Deploy from GitHub repo** and select the repo. Railway reads `railway.json`; Node 22.9+ is picked up from `engines`.
+3. Under **Variables** set:
+   - `MONGODB_URI` (MongoDB Atlas, or a Railway MongoDB plugin reference; Atlas must allow Railway's IPs in Network Access)
+   - `GAAP_API_KEY`, `GAAP_API_BASE_URL`
+   - `CORS_ORIGIN`: the exact public origin, e.g. `https://your-app.up.railway.app` (no trailing slash or path). The backend refuses to start in production without it.
+   - Do not set `PORT` (Railway provides it) or `NODE_ENV` (the start script sets `production`).
+4. Under **Settings → Networking** click **Generate Domain**, then put that origin in `CORS_ORIGIN` and redeploy.
+5. Health check is `/api/v1/health` (through the frontend proxy, so it confirms both processes). Optional backend variables (`GAAP_TIMEOUT_MS`, `GAAP_MAX_CONCURRENCY`, `REPORT_*`, cache settings) are in `backend/.env.example`. GAAP `/sales` pages have been observed taking about 35 s, so raise `GAAP_TIMEOUT_MS` (default 30 s) if reports fail with timeouts.
+6. Reports run in-process for up to 20 minutes, so run a single always-on replica and avoid sleep/serverless settings, which would interrupt them.
+7. Access must be restricted at the infrastructure level before exposure. v1 has no application authentication, and a public `up.railway.app` URL is not access control.
+8. Every push to the connected branch redeploys automatically.
 
 ### Hybrid cache layer
 
