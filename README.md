@@ -131,16 +131,19 @@ React 19 + Vite + React Router + Tailwind CSS v4 + shadcn/ui (JavaScript, dark-o
 - Browser requests go through `frontend/src/lib/api-client.js` to the app's own `/api/v1` only. Never put secrets in `VITE_*` variables.
 - Add shadcn/ui primitives under `frontend/src/components/ui/` (config: `frontend/components.json`).
 
-## Railway deployment overview
+## Render deployment
 
-Full deployment configuration arrives in Feature 30. The intended shape is:
+One GitHub repo, two Render services, defined by the root `render.yaml` blueprint. Both build from the repo root because the project uses npm workspaces.
 
-1. One Railway project containing two services built from this monorepo: `backend` (Express, `npm start`) and `frontend` (Vite static build from `frontend/dist`).
-2. A managed MongoDB instance whose connection string is set as `MONGODB_URI` on the backend service.
-3. Secrets such as `GAAP_API_KEY` set only as backend service variables. They are never committed or exposed to the frontend.
-4. `CORS_ORIGIN` on the backend set to the deployed frontend URL.
-5. Access restricted at the infrastructure level before exposure. v1 has no application authentication, and Railway hosting alone is not access control.
-   ed yet (Feature 19).
+1. Push the repo to GitHub (`.env` files and `sample.js` are gitignored; check `git status` first).
+2. In Render choose **New → Blueprint** and select the repo. It creates `simbisa-backend` (Node web service, `npm run start -w @simbisa/backend`, health check `/api/v1/health`) and `simbisa-frontend` (static site, publishes `frontend/dist`, SPA rewrite to `index.html`).
+3. Set the secret variables in the Render dashboard (they are `sync: false` in the blueprint):
+   - Backend: `MONGODB_URI` (MongoDB Atlas; allow Render in Atlas Network Access), `GAAP_API_KEY`, `GAAP_API_BASE_URL`, `CORS_ORIGIN`.
+   - Frontend: `VITE_API_BASE_URL`.
+4. `CORS_ORIGIN` is the exact frontend origin (e.g. `https://simbisa-frontend.onrender.com`, no trailing slash or path); the backend refuses to start in production without it. `VITE_API_BASE_URL` is the backend URL plus `/api/v1`, and is baked in at build time, so redeploy the frontend after changing it.
+5. Optional backend variables (`GAAP_TIMEOUT_MS`, `GAAP_MAX_CONCURRENCY`, `REPORT_*`, cache settings) are documented in `backend/.env.example`. `GAAP_TIMEOUT_MS` defaults to 30 s, and GAAP `/sales` pages have been observed taking about 35 s, so raise it if reports fail with timeouts.
+6. Reports run in-process for up to 20 minutes, so the backend uses the `starter` plan; a free instance sleeps and would interrupt them.
+7. Access must be restricted at the infrastructure level before exposure. v1 has no application authentication, and a public `onrender.com` URL is not access control.
 
 ### Hybrid cache layer
 

@@ -9,7 +9,7 @@ change.
 
 ## In Progress
 
-- Render deployment (2026-11-09): added root `render.yaml` blueprint (backend web service + frontend static site, one repo, built from the root because of npm workspaces). Not yet deployed: the repo has no GitHub remote, and the secrets (`MONGODB_URI`, `GAAP_API_KEY`, `GAAP_API_BASE_URL`, `CORS_ORIGIN`, `VITE_API_BASE_URL`) must be set in the Render dashboard. Backend uses the `starter` plan because reports run in-process for up to 20 minutes.
+- Render deployment (2026-11-09): added root `render.yaml` blueprint (backend web service + frontend static site, one repo, built from the root because of npm workspaces). Not yet deployed: the repo has no GitHub remote, and the secrets (`MONGODB_URI`, `GAAP_API_KEY`, `GAAP_API_BASE_URL`, `CORS_ORIGIN`, `VITE_API_BASE_URL`) must be set in the Render dashboard. Backend uses the `starter` plan because reports run in-process for up to 20 minutes. README "Railway deployment overview" replaced by a "Render deployment" section; `backend/.env.example` lists the production variables. Verified: root `npm run build` passes; no `.env`/`sample.js` tracked. Not run: an actual Render deploy.
 - Feature 27 (Dashboard Wiring) is implemented (2026-11-09) and **awaiting approval**; next: Feature 28 spec after approval.
 - Feature 26 (Excel Export from Saved Snapshot) is implemented (2026-11-08) and **awaiting approval**. Feature 25 (Currency Breakdown View) approved by the user (2026-11-08). Feature 24 (Report Detail Table) approved by the user (2026-11-08).
 - Feature 23 (Report Summary View) is implemented and **awaiting approval**.
