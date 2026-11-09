@@ -9,13 +9,14 @@
   },
   "scripts": {
     "dev": "node --watch --env-file-if-exists=.env src/server.js",
-    "start": "node --env-file-if-exists=.env src/server.js",
+    "start": "node backend/src/server.js",
     "lint": "eslint .",
     "test": "node --test"
   },
   "dependencies": {
     "axios": "^1.21.0",
     "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
     "exceljs": "^4.4.0",
     "express": "^5.3.0",
     "mongoose": "^9.12.0"

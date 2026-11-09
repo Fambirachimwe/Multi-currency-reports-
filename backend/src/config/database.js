@@ -1,5 +1,7 @@
+import "dotenv/config.js"
 import mongoose from 'mongoose';
 import { logger } from '../utils/logger.js';
+
 
 const DEFAULT_SERVER_SELECTION_TIMEOUT_MS = 5000;
 // Scheme plus at least one host. Credentials may be embedded, so this module
@@ -41,7 +43,7 @@ export class DatabaseConnectionError extends Error {
  * @returns {DatabaseConfig}
  */
 export function loadDatabaseConfig(env = process.env) {
-  const uri = env.MONGODB_URI?.trim();
+  const uri = process.env.MONGODB_URI?.trim();
   if (uri === undefined || uri === '') {
     throw new DatabaseConfigError('MONGODB_URI is required');
   }

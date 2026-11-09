@@ -15,7 +15,7 @@
     "dev": "concurrently -k -n backend,frontend -c blue,cyan \"npm:dev:backend\" \"npm:dev:frontend\"",
     "dev:backend": "npm run dev -w @simbisa/backend",
     "dev:frontend": "npm run dev -w @simbisa/frontend",
-    "start": "node backend/src/server.js",
+    "start": "node ./src/server.js",
     "start:backend": "npm run start -w @simbisa/backend",
     "lint": "eslint .",
     "format": "prettier --write .",
