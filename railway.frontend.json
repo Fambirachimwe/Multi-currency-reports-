@@ -1,10 +1,10 @@
 {
   "$schema": "https://railway.com/railway.schema.json",
   "build": {
-    "buildCommand": "npm run build -w @simbisa/frontend"
+    "buildCommand": "npm run build:frontend"
   },
   "deploy": {
-    "startCommand": "npm run start -w @simbisa/frontend",
+    "startCommand": "npm run start:frontend",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 5
   }

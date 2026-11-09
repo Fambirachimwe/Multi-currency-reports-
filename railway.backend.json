@@ -4,7 +4,7 @@
     "buildCommand": "echo backend has no build step"
   },
   "deploy": {
-    "startCommand": "npm run start -w @simbisa/backend",
+    "startCommand": "npm run start:backend",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 5
   }

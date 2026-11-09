@@ -47,14 +47,15 @@ Run one app on its own with `npm run dev:frontend` or `npm run dev:backend`.
 
 ## Workspace scripts
 
-| Command                                   | What it does                                                                                         |
-| ----------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `npm run dev`                             | Start backend and frontend in watch mode                                                             |
-| `npm run start:backend`                   | Start the backend without watch mode (the frontend has its own `npm run start -w @simbisa/frontend`) |
-| `npm run lint`                            | ESLint across all workspaces (one shared config)                                                     |
-| `npm run format` / `npm run format:check` | Prettier write / check                                                                               |
-| `npm test`                                | Vitest (frontend) and `node --test` (backend)                                                        |
-| `npm run build`                           | Build every workspace that defines a build (currently the frontend)                                  |
+| Command                                   | What it does                                                        |
+| ----------------------------------------- | ------------------------------------------------------------------- |
+| `npm run dev`                             | Start backend and frontend in watch mode                            |
+| `npm start` / `npm run start:frontend`    | Serve the built frontend (`vite preview`); never starts the backend |
+| `npm run start:backend`                   | Start the backend on its own (no watch mode)                        |
+| `npm run lint`                            | ESLint across all workspaces (one shared config)                    |
+| `npm run format` / `npm run format:check` | Prettier write / check                                              |
+| `npm test`                                | Vitest (frontend) and `node --test` (backend)                       |
+| `npm run build`                           | Build every workspace that defines a build (currently the frontend) |
 
 ## Backend API
 
