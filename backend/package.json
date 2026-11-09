@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "node --watch --env-file-if-exists=.env src/server.js",
-    "start": "node backend/src/server.js",
+    "start": "node src/server.js",
     "lint": "eslint .",
     "test": "node --test"
   },
