@@ -143,7 +143,7 @@ One GitHub repo, one Railway service. [`railway.json`](railway.json) builds from
    - `CORS_ORIGIN`: the exact public origin, e.g. `https://your-app.up.railway.app` (no trailing slash or path). The backend refuses to start in production without it.
    - Do not set `PORT` (Railway provides it) or `NODE_ENV` (the start script sets `production`).
 4. Under **Settings → Networking** click **Generate Domain**, then put that origin in `CORS_ORIGIN` and redeploy.
-5. Health check is `/api/v1/health` (through the frontend proxy, so it confirms both processes). Optional backend variables (`GAAP_TIMEOUT_MS`, `GAAP_MAX_CONCURRENCY`, `REPORT_*`, cache settings) are in `backend/.env.example`. GAAP `/sales` pages have been observed taking about 35 s, so raise `GAAP_TIMEOUT_MS` (default 30 s) if reports fail with timeouts.
+5. Optional backend variables (`GAAP_TIMEOUT_MS`, `GAAP_MAX_CONCURRENCY`, `REPORT_*`, cache settings) are in `backend/.env.example`. GAAP `/sales` pages have been observed taking about 35 s, so raise `GAAP_TIMEOUT_MS` (default 30 s) if reports fail with timeouts.
 6. Reports run in-process for up to 20 minutes, so run a single always-on replica and avoid sleep/serverless settings, which would interrupt them.
 7. Access must be restricted at the infrastructure level before exposure. v1 has no application authentication, and a public `up.railway.app` URL is not access control.
 8. Every push to the connected branch redeploys automatically.
