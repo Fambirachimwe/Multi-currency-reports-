@@ -44,7 +44,13 @@ export default [
     rules: { 'react-refresh/only-export-components': 'off' },
   },
   {
-    files: ['backend/**/*.js', 'shared/**/*.js', '*.config.js', 'frontend/vite.config.js'],
+    files: [
+      'backend/**/*.js',
+      'shared/**/*.js',
+      'scripts/**/*.js',
+      '*.config.js',
+      'frontend/vite.config.js',
+    ],
     languageOptions: { globals: globals.node },
   },
   prettier,

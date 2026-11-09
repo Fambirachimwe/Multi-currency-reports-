@@ -25,6 +25,18 @@ export default defineConfig(({ mode }) => {
         '/api': backendUrl,
       },
     },
+    // Production: `vite preview` serves frontend/dist on the host's public PORT and proxies
+    // /api to the backend (see scripts/start.js). allowedHosts is open because the public
+    // hostname (e.g. *.onrender.com) is not known at build time.
+    preview: {
+      host: true,
+      port: Number(env.PORT) || 4173,
+      strictPort: true,
+      allowedHosts: true,
+      proxy: {
+        '/api': backendUrl,
+      },
+    },
     test: {
       environment: 'jsdom',
       setupFiles: ['./src/test/setup.js'],
