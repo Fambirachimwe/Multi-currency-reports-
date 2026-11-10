@@ -46,6 +46,30 @@ export function createDecimalSum() {
   };
 }
 
+/**
+ * Exact product of two decimal strings (BigInt, no floats). Canonical output like `toString()`.
+ * @param {string} a @param {string} b @returns {string}
+ */
+export function multiplyDecimalStrings(a, b) {
+  const parse = (text) => {
+    const match = typeof text === 'string' ? DECIMAL_PATTERN.exec(text) : null;
+    if (match === null) throw new TypeError('multiplyDecimalStrings() requires decimal strings');
+    const [, sign, whole, fraction = ''] = match;
+    const amount = BigInt(whole + fraction);
+    return { amount: sign === '-' ? -amount : amount, scale: fraction.length };
+  };
+  const x = parse(a);
+  const y = parse(b);
+  const product = x.amount * y.amount;
+  const scale = x.scale + y.scale;
+  const negative = product < 0n;
+  const digits = (negative ? -product : product).toString().padStart(scale + 1, '0');
+  const whole = digits.slice(0, digits.length - scale);
+  const fraction = digits.slice(digits.length - scale).replace(/0+$/, '');
+  const body = fraction === '' ? whole : `${whole}.${fraction}`;
+  return negative ? `-${body}` : body;
+}
+
 /** @param {string[]} texts @returns {string} Exact sum of decimal strings; "0" for an empty list. */
 export function sumDecimalStrings(texts) {
   const sum = createDecimalSum();

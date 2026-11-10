@@ -41,7 +41,11 @@ describe('field mapping and traceability', () => {
     assert.equal(line.quantity, '1');
     assert.equal(line.turnover, '4.6');
     assert.deepEqual(line.sale, { status: 'TENDERED', isNegative: false });
-    assert.deepEqual(line.currencySource, { selectedCurrency: 'USD', baseCurrency: 'USD' });
+    assert.deepEqual(line.currencySource, {
+      selectedCurrency: 'USD',
+      baseCurrency: 'USD',
+      selectedRate: null,
+    });
     assert.deepEqual(line.issues, []);
     assert.equal(line.usable, true);
     assert.deepEqual(summary, {
@@ -501,7 +505,11 @@ describe('currency fields are carried, not classified', () => {
     const line = one(
       fixtureRawSale('s1', [fixtureRawLine('l1')], { forex: fixtureForex('ZWG', 'USD') }),
     );
-    assert.deepEqual(line.currencySource, { selectedCurrency: 'ZWG', baseCurrency: 'USD' });
+    assert.deepEqual(line.currencySource, {
+      selectedCurrency: 'ZWG',
+      baseCurrency: 'USD',
+      selectedRate: null,
+    });
     assert.deepEqual(codes(line), [ISSUE_CODES.CURRENCY_FIELDS_DIFFER]);
     assert.equal(line.usable, true);
     assert.equal('currency' in line, false, 'no resolved currency exists before Feature 16');
@@ -511,11 +519,19 @@ describe('currency fields are carried, not classified', () => {
     const noSelected = one(
       fixtureRawSale('s1', [fixtureRawLine('l1')], { forex: fixtureForex(undefined, 'USD') }),
     );
-    assert.deepEqual(noSelected.currencySource, { selectedCurrency: null, baseCurrency: 'USD' });
+    assert.deepEqual(noSelected.currencySource, {
+      selectedCurrency: null,
+      baseCurrency: 'USD',
+      selectedRate: null,
+    });
     assert.deepEqual(codes(noSelected), [ISSUE_CODES.CURRENCY_FIELD_MISSING]);
 
     const none = one(fixtureRawSale('s2', [fixtureRawLine('l1')], { forex: undefined }));
-    assert.deepEqual(none.currencySource, { selectedCurrency: null, baseCurrency: null });
+    assert.deepEqual(none.currencySource, {
+      selectedCurrency: null,
+      baseCurrency: null,
+      selectedRate: null,
+    });
     assert.deepEqual(codes(none), [
       ISSUE_CODES.CURRENCY_FIELD_MISSING,
       ISSUE_CODES.CURRENCY_FIELD_MISSING,

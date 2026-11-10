@@ -7,6 +7,10 @@ change.
 
 - Features 09–20 approved by the user (2026-11-08). Feature 21 (Save Immutable Report Snapshot) approved by the user (2026-11-08); its open items and decisions are deferred to a clean-up pass once all feature specs are done. Feature 22 (Saved Reports List) approved by the user (2026-11-08). Feature 23 (Report Summary View) implemented 2026-11-08, awaiting approval. Feature 24 (Report Detail Table) approved by the user (2026-11-08).
 
+## Currency decision (owner, 2026-11-10)
+
+- GAAP stores sales in the BASE currency (USD); `selectedCurrency` says which currency the customer chose. When selected differs from base, reports use the SELECTED currency: turnover = base turnover x `fromBaseToForeign` of the matching `forex.forexRates[]` entry, 26.688 for ZWG (owner-verified against a real sale; NOT `customToBaseFromForeign`, which was 30) (exact decimal, no rounding; original kept as `baseTurnover`). Example: 222.51 x 26.688 = 5938.34688 (shown as 5938.35). A missing or unusable rate falls back to the base currency, unconverted. Policy `selected` is the new default in `currency.resolver.js`; `base` and `unknown` remain. Tax is not saved on rows or totals, so only turnover is converted. Saved reports keep their old classification, so generate a new one. Tests updated; not verified against live GAAP.
+
 ## In Progress
 
 - Render deployment (2026-11-09): added root `render.yaml` blueprint (backend web service + frontend static site, one repo, built from the root because of npm workspaces). Not yet deployed: the repo has no GitHub remote, and the secrets (`MONGODB_URI`, `GAAP_API_KEY`, `GAAP_API_BASE_URL`, `CORS_ORIGIN`, `VITE_API_BASE_URL`) must be set in the Render dashboard. Backend uses the `starter` plan because reports run in-process for up to 20 minutes. README "Railway deployment overview" replaced by a "Render deployment" section; `backend/.env.example` lists the production variables. Verified: root `npm run build` passes; no `.env`/`sample.js` tracked. Not run: an actual Render deploy.

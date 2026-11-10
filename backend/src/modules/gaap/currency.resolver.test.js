@@ -95,7 +95,7 @@ describe('resolveCurrency: selected differs from base', () => {
 
   it('rejects an unsupported policy instead of guessing', () => {
     assert.throws(
-      () => resolveCurrency(src('USD', 'USD'), { differingPolicy: 'selected' }),
+      () => resolveCurrency(src('USD', 'USD'), { differingPolicy: 'bogus' }),
       TypeError,
     );
   });
@@ -238,5 +238,28 @@ describe('classifyLineCurrencies', () => {
   it('treats a line without currencySource as UNKNOWN', () => {
     const [line] = classifyLineCurrencies([{ turnover: '5' }]).lines;
     assert.equal(line.currency, CURRENCY_UNKNOWN);
+  });
+});
+
+describe('selected currency conversion (owner decision 2026-11-10)', () => {
+  it('converts base turnover to the selected currency: 222.51 x 26.688 = 5938.35', () => {
+    const line = {
+      turnover: '222.51',
+      currencySource: { selectedCurrency: 'ZWG', baseCurrency: 'USD', selectedRate: '26.688' },
+    };
+    const [out] = classifyLineCurrencies([line]).lines;
+    assert.equal(out.currency, 'ZWG');
+    assert.equal(out.turnover, '5938.34688');
+    assert.equal(out.baseTurnover, '222.51');
+  });
+
+  it('falls back to the base currency, unconverted, when no usable rate exists', () => {
+    const line = {
+      turnover: '10',
+      currencySource: { selectedCurrency: 'ZWG', baseCurrency: 'USD', selectedRate: null },
+    };
+    const [out] = classifyLineCurrencies([line]).lines;
+    assert.equal(out.currency, 'USD');
+    assert.equal(out.turnover, '10');
   });
 });

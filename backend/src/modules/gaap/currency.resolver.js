@@ -30,6 +30,8 @@
  * and never converts.
  */
 
+import { multiplyDecimalStrings } from './decimal-sum.js';
+
 const CODE_ALIASES = Object.freeze({ ZWL: 'ZWG' });
 
 export const CURRENCY_UNKNOWN = 'UNKNOWN';
@@ -37,6 +39,7 @@ export const CURRENCY_UNKNOWN = 'UNKNOWN';
 export const CURRENCY_BASIS = Object.freeze({
   SELECTED_EQUALS_BASE: 'SELECTED_EQUALS_BASE',
   BASE_WHEN_SELECTED_DIFFERS: 'BASE_WHEN_SELECTED_DIFFERS',
+  SELECTED_FROM_BASE_RATE: 'SELECTED_FROM_BASE_RATE',
 });
 
 export const CURRENCY_REASONS = Object.freeze({
@@ -45,9 +48,14 @@ export const CURRENCY_REASONS = Object.freeze({
   SELECTED_CURRENCY_INVALID: 'SELECTED_CURRENCY_INVALID',
   BASE_CURRENCY_INVALID: 'BASE_CURRENCY_INVALID',
   CURRENCY_BASIS_UNCONFIRMED: 'CURRENCY_BASIS_UNCONFIRMED',
+  SELECTED_RATE_MISSING: 'SELECTED_RATE_MISSING',
 });
 
-export const DIFFERING_CURRENCY_POLICIES = Object.freeze({ BASE: 'base', UNKNOWN: 'unknown' });
+export const DIFFERING_CURRENCY_POLICIES = Object.freeze({
+  SELECTED: 'selected',
+  BASE: 'base',
+  UNKNOWN: 'unknown',
+});
 
 export const CURRENCY_RESOLVER_VERSION = 1;
 
@@ -71,9 +79,9 @@ const CODE_PATTERN = /^[A-Z]{3}$/;
  * @returns {CurrencyResolution}
  */
 export function resolveCurrency(currencySource, options = {}) {
-  const policy = options.differingPolicy ?? DIFFERING_CURRENCY_POLICIES.BASE;
+  const policy = options.differingPolicy ?? DIFFERING_CURRENCY_POLICIES.SELECTED;
   if (!Object.values(DIFFERING_CURRENCY_POLICIES).includes(policy)) {
-    throw new TypeError('differingPolicy must be "base" or "unknown"');
+    throw new TypeError('differingPolicy must be "selected", "base" or "unknown"');
   }
 
   const selected = readCode(currencySource?.selectedCurrency);
@@ -104,6 +112,17 @@ export function resolveCurrency(currencySource, options = {}) {
 
   if (selected.code === base.code) {
     return resolved(base.code, CURRENCY_BASIS.SELECTED_EQUALS_BASE, known);
+  }
+  if (policy === DIFFERING_CURRENCY_POLICIES.SELECTED) {
+    // Owner decision (2026-11-10): report in the SELECTED currency. Base turnover is multiplied by
+    // the selected currency's `fromBaseToForeign` (from forexRates); without a usable rate nothing is guessed.
+    const rate =
+      typeof currencySource?.selectedRate === 'string' ? currencySource.selectedRate : null;
+    // Owner decision (2026-11-10): no usable rate -> fall back to the base currency, unconverted.
+    if (rate === null) {
+      return resolved(base.code, CURRENCY_BASIS.BASE_WHEN_SELECTED_DIFFERS, known);
+    }
+    return { ...resolved(selected.code, CURRENCY_BASIS.SELECTED_FROM_BASE_RATE, known), rate };
   }
   if (policy === DIFFERING_CURRENCY_POLICIES.BASE) {
     return resolved(base.code, CURRENCY_BASIS.BASE_WHEN_SELECTED_DIFFERS, known);
@@ -137,6 +156,16 @@ export function classifyLineCurrencies(lines, options = {}) {
     } else {
       unknownCount += 1;
       reasonCounts[currencyResolution.reason] = (reasonCounts[currencyResolution.reason] ?? 0) + 1;
+    }
+    if (currencyResolution.basis === CURRENCY_BASIS.SELECTED_FROM_BASE_RATE && line.turnover) {
+      // Exact decimal product; the original base amount is kept alongside.
+      return {
+        ...line,
+        baseTurnover: line.turnover,
+        turnover: multiplyDecimalStrings(line.turnover, currencyResolution.rate),
+        currency,
+        currencyResolution,
+      };
     }
     return { ...line, currency, currencyResolution };
   });

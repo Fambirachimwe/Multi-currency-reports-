@@ -1,0 +1,2317 @@
+{
+  "totalRecords": 5,
+  "data": [
+    {
+      "_id": "6ae88bad335d570d7bca8222",
+      "createdDate": "2026-11-02T13:10:05.665Z",
+      "updatedDate": "2026-11-02T13:10:35.075Z",
+      "nodeId": "6a316021b0378d8449c5d769",
+      "status": "TENDERED",
+      "lastStatus": "OPEN",
+      "invoiceNumber": "002_00000688",
+      "lastTerminalNumber": 2,
+      "isNegative": false,
+      "closedDate": "2026-11-02T13:10:34.572Z",
+      "location": {
+        "id": "6944ec294e221773fbaeb324",
+        "name": "Default Location"
+      },
+      "guestCount": 1,
+      "orderNumber": "2688",
+      "onlineCustomer": {},
+      "onlineOrderHeader": {
+        "deliveryTime": null,
+        "totalValue": 0
+      },
+      "customer": {},
+      "owner": {
+        "id": "6ae466caa0b31ab4f1704eb9",
+        "name": "Mcline"
+      },
+      "printCounts": {
+        "invoice": 0,
+        "proforma": 0
+      },
+      "items": [
+        {
+          "lineId": "5e7cde1b-3a7c-e999-e41f-115f0ed29c7d",
+          "qty": 1,
+          "productTotals": {
+            "turnover": 390.28,
+            "nonTurnover": 0,
+            "tax": 52.3752380952381
+          },
+          "lineTotals": {
+            "turnover": 390.28,
+            "nonTurnover": 0,
+            "tax": 52.375238095
+          },
+          "product": {
+            "_id": "697753ee485d5a79aefb9bbf",
+            "primaryCode": "ZWCHC30CHX142S00",
+            "name": "Fastjet",
+            "kitchenDescription": "Fastjet",
+            "printerDescription": "Fastjet",
+            "posTypes": "8",
+            "sellingInclusive": 0,
+            "taxRateId": "6944ec3c5050152bc377dc27",
+            "taxRateAmount": 1.155,
+            "pricing": {
+              "hqCost": 0,
+              "lastCost": 0,
+              "averageCost": 0,
+              "salesTaxType": "6944ec3c5050152bc377dc27",
+              "costToUse": "lastCost"
+            },
+            "departments": [
+              {
+                "group": "POS Department",
+                "groupId": "695e69e9e63aa8744f18138a",
+                "departmentId": "695e6cb1a2c102b8b3731e1b",
+                "department": "Fastjet"
+              },
+              {
+                "group": "Reporting Department",
+                "groupId": "69663a5be63aa8744f227d3c",
+                "departmentId": "69663a1530b22daed247b3c8",
+                "department": "POS"
+              }
+            ]
+          },
+          "discountAmount": 0,
+          "discountPercentage": 0,
+          "note": "Booking #22223181",
+          "addOns": [],
+          "employee": {
+            "id": "6ae466caa0b31ab4f1704eb9",
+            "name": "Mcline"
+          },
+          "addedTime": "2026-11-02T13:09:33.911Z",
+          "priceExcl": 3.0303030303030303,
+          "priceIncl": "390.28",
+          "orderItemSummary": "Booking #22223181",
+          "salesOrderTag": {
+            "id": "68a5895baae5cfb2c9acb956"
+          },
+          "pricingOption": {
+            "id": "basePrice",
+            "name": "Base Price"
+          },
+          "addOnsPriceIncl": 0,
+          "addOnsDiscountAmount": 0,
+          "promoDiscountAmount": 0,
+          "activePromotion": {
+            "discountAmount": 0
+          }
+        }
+      ],
+      "deletedItems": [],
+      "promotions": [],
+      "payments": [
+        {
+          "amount": 390.28,
+          "actualTender": 401,
+          "tip": 0,
+          "changeGiven": 10.72,
+          "name": "Cash USD",
+          "paymentMethodId": "6944ec3c5050152bc377dc2b"
+        }
+      ],
+      "totals": {
+        "turnover": 390.28,
+        "nonTurnover": 0,
+        "tax": 52.375238095,
+        "tip": 0,
+        "finalDiscount": 0
+      },
+      "saleType": {
+        "id": "68a5895baae5cfb2c9acb956",
+        "name": "Takeaway"
+      },
+      "sourced": null,
+      "associatedActivities": [
+        {
+          "loggedInUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T13:10:05.665Z",
+          "operation": "newSalesOrder",
+          "salesOrderId": "6ae88bad335d570d7bca8222",
+          "securityAuthUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "details": {
+            "destination": {
+              "guestCount": 1,
+              "orderNumber": "2688"
+            },
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {
+              "id": "68a5895baae5cfb2c9acb956",
+              "name": "Takeaway"
+            },
+            "owner": {
+              "_id": "6ae466caa0b31ab4f1704eb9",
+              "name": "Mcline"
+            },
+            "balanceBefore": 0,
+            "balanceAfter": 390.28,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T13:10:05.665Z",
+          "operation": "addOrderItems",
+          "salesOrderId": "6ae88bad335d570d7bca8222",
+          "securityAuthUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {},
+                "after": {},
+                "lineId": "5e7cde1b-3a7c-e999-e41f-115f0ed29c7d"
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 390.28,
+            "balanceAfter": 390.28,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T13:10:27.443Z",
+          "operation": "updateSalesOrder",
+          "salesOrderId": "6ae88bad335d570d7bca8222",
+          "securityAuthUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "source": "processPayment",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 390.28,
+            "balanceAfter": -10.72,
+            "payments": [
+              {
+                "id": "6944ec3c5050152bc377dc2b",
+                "name": "Cash USD",
+                "amount": 390.28,
+                "actualTender": 401
+              }
+            ]
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T13:10:34.572Z",
+          "operation": "setSalesOrderStatus",
+          "salesOrderId": "6ae88bad335d570d7bca8222",
+          "securityAuthUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": -10.72,
+            "balanceAfter": -10.72,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T13:10:34.572Z",
+          "operation": "setAllStatus",
+          "salesOrderId": "6ae88bad335d570d7bca8222",
+          "securityAuthUser": {
+            "_id": "6ae466caa0b31ab4f1704eb9",
+            "firstName": "Mcline",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {
+                  "status": "UNCOMMITTED"
+                },
+                "after": {
+                  "status": "COMMITTED"
+                },
+                "lineId": "5e7cde1b-3a7c-e999-e41f-115f0ed29c7d",
+                "addOnsPriceIncl": 0,
+                "addOnsDiscountAmount": 0
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": -10.72,
+            "balanceAfter": -10.72,
+            "payments": []
+          }
+        }
+      ],
+      "forex": {
+        "baseCurrency": {
+          "forexId": "6944ec3c5050152bc377dc42",
+          "currency": "USD",
+          "fromBaseToForeign": 1,
+          "toBaseFromForeign": 1,
+          "customFromBaseToForeign": 1,
+          "customToBaseFromForeign": 1,
+          "difference": 0
+        },
+        "selectedCurrency": {
+          "forexId": "6944ec3c5050152bc377dc42",
+          "currency": "USD",
+          "fromBaseToForeign": 1,
+          "toBaseFromForeign": 1,
+          "customFromBaseToForeign": 1,
+          "customToBaseFromForeign": 1,
+          "difference": 0
+        },
+        "forexRates": [
+          {
+            "forexId": "6944ec3c5050152bc377dc42",
+            "currency": "USD",
+            "fromBaseToForeign": 1,
+            "toBaseFromForeign": 1,
+            "customFromBaseToForeign": 1,
+            "customToBaseFromForeign": 1,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6d2ebb6e30394e06e2a",
+            "currency": "ZWG",
+            "fromBaseToForeign": 26.688,
+            "toBaseFromForeign": 0.03747002398081535,
+            "customFromBaseToForeign": 0.03333333333333333,
+            "customToBaseFromForeign": 30,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6ddebb6e30394e06e2b",
+            "currency": "ZAR",
+            "fromBaseToForeign": 16.390219,
+            "toBaseFromForeign": 0.06101199746019258,
+            "customFromBaseToForeign": 0.0625,
+            "customToBaseFromForeign": 16,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6f5ebb6e30394e06e2c",
+            "currency": "GBP",
+            "fromBaseToForeign": 0.7470499999999999,
+            "toBaseFromForeign": 1.3385984873837091,
+            "customFromBaseToForeign": 1.3333333333333333,
+            "customToBaseFromForeign": 0.75,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c711ebb6e30394e06e2d",
+            "currency": "BWP",
+            "fromBaseToForeign": 13.700642,
+            "toBaseFromForeign": 0.07298928035635119,
+            "customFromBaseToForeign": 0.07352941176470588,
+            "customToBaseFromForeign": 13.6,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c733ebb6e30394e06e2e",
+            "currency": "EUR",
+            "fromBaseToForeign": 0.890535,
+            "toBaseFromForeign": 1.1229204916145912,
+            "customFromBaseToForeign": 1.1627906976744187,
+            "customToBaseFromForeign": 0.86,
+            "difference": 0
+          }
+        ]
+      },
+      "node": "Simbisa Kelvin Corner - Chicken Inn",
+      "adminNode": "Simbisa Zimbabwe Chicken Inn",
+      "adminNodeId": "6af2b9234bf46cd19ed3d7a3"
+    },
+    {
+      "_id": "6ae855e60ee0f037bef259d4",
+      "createdDate": "2026-11-02T09:20:38.280Z",
+      "updatedDate": "2026-11-02T09:21:52.586Z",
+      "nodeId": "6a637e6c17687c27a1da79bd",
+      "status": "TENDERED",
+      "lastStatus": "SUBTOTALED",
+      "invoiceNumber": "002_00023704",
+      "lastTerminalNumber": 2,
+      "isNegative": false,
+      "closedDate": "2026-11-02T09:21:52.082Z",
+      "location": {
+        "id": "6944ec294e221773fbaeb324",
+        "name": "Default Location"
+      },
+      "guestCount": 1,
+      "orderNumber": "2727",
+      "onlineCustomer": {},
+      "onlineOrderHeader": {
+        "deliveryTime": null,
+        "totalValue": 0
+      },
+      "customer": {},
+      "owner": {
+        "id": "6a69a80517687c27a1f846a7",
+        "name": "Pamela"
+      },
+      "printCounts": {
+        "invoice": 0,
+        "proforma": 0
+      },
+      "items": [
+        {
+          "lineId": "b57b0830-0260-1614-5163-e9a0d9bfa921",
+          "qty": 1,
+          "productTotals": {
+            "turnover": 550.51,
+            "nonTurnover": 0,
+            "tax": 73.87796536796537
+          },
+          "lineTotals": {
+            "turnover": 550.51,
+            "nonTurnover": 0,
+            "tax": 73.877965368
+          },
+          "product": {
+            "_id": "697753ee485d5a79aefb9bbf",
+            "primaryCode": "ZWCHC30CHX142S00",
+            "name": "Fastjet",
+            "kitchenDescription": "Fastjet",
+            "printerDescription": "Fastjet",
+            "posTypes": "8",
+            "sellingInclusive": 0,
+            "taxRateId": "6944ec3c5050152bc377dc27",
+            "taxRateAmount": 1.155,
+            "pricing": {
+              "hqCost": 0,
+              "lastCost": 0,
+              "averageCost": 0,
+              "salesTaxType": "6944ec3c5050152bc377dc27",
+              "costToUse": "lastCost"
+            },
+            "departments": [
+              {
+                "group": "POS Department",
+                "groupId": "695e69e9e63aa8744f18138a",
+                "departmentId": "695e6cb1a2c102b8b3731e1b",
+                "department": "Fastjet"
+              },
+              {
+                "group": "Reporting Department",
+                "groupId": "69663a5be63aa8744f227d3c",
+                "departmentId": "69663a1530b22daed247b3c8",
+                "department": "POS"
+              }
+            ]
+          },
+          "discountAmount": 0,
+          "discountPercentage": 0,
+          "note": "Booking #63722497",
+          "addOns": [],
+          "employee": {
+            "id": "6a69a80517687c27a1f846a7",
+            "name": "Pamela"
+          },
+          "addedTime": "2026-11-02T09:19:51.348Z",
+          "priceExcl": 3.0303030303030303,
+          "priceIncl": "550.51",
+          "orderItemSummary": "Booking #63722497",
+          "salesOrderTag": {
+            "id": "68a5895baae5cfb2c9acb956"
+          },
+          "pricingOption": {
+            "id": "basePrice",
+            "name": "Base Price"
+          },
+          "addOnsPriceIncl": 0,
+          "addOnsDiscountAmount": 0,
+          "promoDiscountAmount": 0,
+          "activePromotion": {
+            "discountAmount": 0
+          }
+        }
+      ],
+      "deletedItems": [],
+      "promotions": [],
+      "payments": [
+        {
+          "amount": 550.51,
+          "actualTender": 551,
+          "tip": 0,
+          "changeGiven": 0.49,
+          "name": "Cash USD",
+          "paymentMethodId": "6944ec3c5050152bc377dc2b"
+        }
+      ],
+      "totals": {
+        "turnover": 550.51,
+        "nonTurnover": 0,
+        "tax": 73.877965368,
+        "tip": 0,
+        "finalDiscount": 0
+      },
+      "saleType": {
+        "id": "68a5895baae5cfb2c9acb956",
+        "name": "Takeaway"
+      },
+      "sourced": null,
+      "associatedActivities": [
+        {
+          "loggedInUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T09:20:38.281Z",
+          "operation": "newSalesOrder",
+          "salesOrderId": "6ae855e60ee0f037bef259d4",
+          "securityAuthUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "securityKey": "StartNewSalesOrder",
+          "details": {
+            "destination": {
+              "guestCount": 1,
+              "orderNumber": "2727"
+            },
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {
+              "id": "68a5895baae5cfb2c9acb956",
+              "name": "Takeaway"
+            },
+            "owner": {
+              "_id": "6a69a80517687c27a1f846a7",
+              "name": "Pamela"
+            },
+            "balanceBefore": 0,
+            "balanceAfter": 550.51,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T09:20:38.281Z",
+          "operation": "addOrderItems",
+          "salesOrderId": "6ae855e60ee0f037bef259d4",
+          "securityAuthUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "securityKey": "StartNewSalesOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {},
+                "after": {},
+                "lineId": "b57b0830-0260-1614-5163-e9a0d9bfa921"
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 550.51,
+            "balanceAfter": 550.51,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T09:21:31.052Z",
+          "operation": "setSalesOrderStatus",
+          "salesOrderId": "6ae855e60ee0f037bef259d4",
+          "securityAuthUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "securityKey": "SubtotalSaleOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 550.51,
+            "balanceAfter": 550.51,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T09:21:31.053Z",
+          "operation": "setAllStatus",
+          "salesOrderId": "6ae855e60ee0f037bef259d4",
+          "securityAuthUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "securityKey": "SubtotalSaleOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {
+                  "status": "UNCOMMITTED"
+                },
+                "after": {
+                  "status": "COMMITTED"
+                },
+                "lineId": "b57b0830-0260-1614-5163-e9a0d9bfa921",
+                "addOnsPriceIncl": 0,
+                "addOnsDiscountAmount": 0
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 550.51,
+            "balanceAfter": 550.51,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T09:21:40.664Z",
+          "operation": "updateSalesOrder",
+          "salesOrderId": "6ae855e60ee0f037bef259d4",
+          "securityAuthUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "source": "processPayment",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 550.51,
+            "balanceAfter": -0.49,
+            "payments": [
+              {
+                "id": "6944ec3c5050152bc377dc2b",
+                "name": "Cash USD",
+                "amount": 550.51,
+                "actualTender": 551
+              }
+            ]
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T09:21:46.750Z",
+          "operation": "updateSalesOrder",
+          "salesOrderId": "6ae855e60ee0f037bef259d4",
+          "securityAuthUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "source": "beforeTenderValidation",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": -0.49,
+            "balanceAfter": -0.49,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T09:21:52.082Z",
+          "operation": "setSalesOrderStatus",
+          "salesOrderId": "6ae855e60ee0f037bef259d4",
+          "securityAuthUser": {
+            "_id": "6a69a80517687c27a1f846a7",
+            "firstName": "Pamela",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": -0.49,
+            "balanceAfter": -0.49,
+            "payments": []
+          }
+        }
+      ],
+      "forex": {
+        "baseCurrency": {
+          "forexId": "6944ec3c5050152bc377dc42",
+          "currency": "USD",
+          "fromBaseToForeign": 1,
+          "toBaseFromForeign": 1,
+          "customFromBaseToForeign": 1,
+          "customToBaseFromForeign": 1,
+          "difference": 0
+        },
+        "selectedCurrency": {
+          "forexId": "6944ec3c5050152bc377dc42",
+          "currency": "USD",
+          "fromBaseToForeign": 1,
+          "toBaseFromForeign": 1,
+          "customFromBaseToForeign": 1,
+          "customToBaseFromForeign": 1,
+          "difference": 0
+        },
+        "forexRates": [
+          {
+            "forexId": "6944ec3c5050152bc377dc42",
+            "currency": "USD",
+            "fromBaseToForeign": 1,
+            "toBaseFromForeign": 1,
+            "customFromBaseToForeign": 1,
+            "customToBaseFromForeign": 1,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6d2ebb6e30394e06e2a",
+            "currency": "ZWG",
+            "fromBaseToForeign": 26.688,
+            "toBaseFromForeign": 0.03747002398081535,
+            "customFromBaseToForeign": 0.03333333333333333,
+            "customToBaseFromForeign": 30,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6ddebb6e30394e06e2b",
+            "currency": "ZAR",
+            "fromBaseToForeign": 16.390219,
+            "toBaseFromForeign": 0.06101199746019258,
+            "customFromBaseToForeign": 0.0625,
+            "customToBaseFromForeign": 16,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6f5ebb6e30394e06e2c",
+            "currency": "GBP",
+            "fromBaseToForeign": 0.7470499999999999,
+            "toBaseFromForeign": 1.3385984873837091,
+            "customFromBaseToForeign": 1.3333333333333333,
+            "customToBaseFromForeign": 0.75,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c711ebb6e30394e06e2d",
+            "currency": "BWP",
+            "fromBaseToForeign": 13.700642,
+            "toBaseFromForeign": 0.07298928035635119,
+            "customFromBaseToForeign": 0.07352941176470588,
+            "customToBaseFromForeign": 13.6,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c733ebb6e30394e06e2e",
+            "currency": "EUR",
+            "fromBaseToForeign": 0.890535,
+            "toBaseFromForeign": 1.1229204916145912,
+            "customFromBaseToForeign": 1.1627906976744187,
+            "customToBaseFromForeign": 0.86,
+            "difference": 0
+          }
+        ]
+      },
+      "node": "SIMBISA AMC - CHICKEN INN",
+      "adminNode": "Simbisa Zimbabwe Chicken Inn",
+      "adminNodeId": "6af2b9234bf46cd19ed3d7a3"
+    },
+    {
+      "_id": "6ae828288b8bcaf8a0679ad0",
+      "createdDate": "2026-11-02T06:05:28.882Z",
+      "updatedDate": "2026-11-02T06:06:37.764Z",
+      "nodeId": "6ad5e7c56f76ee37aab7f683",
+      "status": "TENDERED",
+      "lastStatus": "SUBTOTALED",
+      "invoiceNumber": "001_00002033",
+      "lastTerminalNumber": 1,
+      "isNegative": false,
+      "closedDate": "2026-11-02T06:06:37.256Z",
+      "location": {
+        "id": "6944ec294e221773fbaeb324",
+        "name": "Default Location"
+      },
+      "guestCount": 1,
+      "orderNumber": "1035",
+      "onlineCustomer": {},
+      "onlineOrderHeader": {
+        "deliveryTime": null,
+        "totalValue": 0
+      },
+      "customer": {},
+      "owner": {
+        "id": "6ad7b8836f76ee37aac426da",
+        "name": "Keith"
+      },
+      "printCounts": {
+        "invoice": 0,
+        "proforma": 0
+      },
+      "items": [
+        {
+          "lineId": "966e2289-a291-518d-7c45-4b951237e54e",
+          "qty": 1,
+          "productTotals": {
+            "turnover": 222.51,
+            "nonTurnover": 0,
+            "tax": 29.860649350649368
+          },
+          "lineTotals": {
+            "turnover": 222.51,
+            "nonTurnover": 0,
+            "tax": 29.860649351
+          },
+          "product": {
+            "_id": "697753ee485d5a79aefb9bbf",
+            "primaryCode": "ZWCHC30CHX142S00",
+            "name": "Fastjet",
+            "kitchenDescription": "Fastjet",
+            "printerDescription": "Fastjet",
+            "posTypes": "8",
+            "sellingInclusive": 0,
+            "taxRateId": "6944ec3c5050152bc377dc27",
+            "taxRateAmount": 1.155,
+            "pricing": {
+              "hqCost": 0,
+              "lastCost": 0,
+              "averageCost": 0,
+              "salesTaxType": "6944ec3c5050152bc377dc27",
+              "costToUse": "lastCost"
+            },
+            "departments": [
+              {
+                "group": "POS Department",
+                "groupId": "695e69e9e63aa8744f18138a",
+                "departmentId": "695e6cb1a2c102b8b3731e1b",
+                "department": "Fastjet"
+              },
+              {
+                "group": "Reporting Department",
+                "groupId": "69663a5be63aa8744f227d3c",
+                "departmentId": "69663a1530b22daed247b3c8",
+                "department": "POS"
+              }
+            ]
+          },
+          "discountAmount": 0,
+          "discountPercentage": 0,
+          "note": "Booking #30276764",
+          "addOns": [],
+          "employee": {
+            "id": "6ad7b8836f76ee37aac426da",
+            "name": "Keith"
+          },
+          "addedTime": "2026-11-02T06:05:00.799Z",
+          "priceExcl": 3.0303030303030303,
+          "priceIncl": 222.51,
+          "orderItemSummary": "Booking #30276764",
+          "salesOrderTag": {
+            "id": "68a5895baae5cfb2c9acb956"
+          },
+          "pricingOption": {
+            "id": "basePrice",
+            "name": "Base Price"
+          },
+          "addOnsPriceIncl": 0,
+          "addOnsDiscountAmount": 0,
+          "promoDiscountAmount": 0,
+          "activePromotion": {
+            "discountAmount": 0
+          }
+        }
+      ],
+      "deletedItems": [],
+      "promotions": [],
+      "payments": [
+        {
+          "amount": 222.51000000000002,
+          "actualTender": 222.52,
+          "tip": 0,
+          "changeGiven": 0.01,
+          "name": "Back Up Swipe  machine ZWG",
+          "paymentMethodId": "6a44c69eebb6e30394e06e28"
+        }
+      ],
+      "totals": {
+        "turnover": 222.51,
+        "nonTurnover": 0,
+        "tax": 29.860649351,
+        "tip": 0,
+        "finalDiscount": 0
+      },
+      "saleType": {
+        "id": "68a5895baae5cfb2c9acb956",
+        "name": "Takeaway"
+      },
+      "sourced": null,
+      "associatedActivities": [
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T06:05:28.883Z",
+          "operation": "newSalesOrder",
+          "salesOrderId": "6ae828288b8bcaf8a0679ad0",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "AddItemToSalesOrder",
+          "details": {
+            "destination": {
+              "guestCount": 1,
+              "orderNumber": "1035"
+            },
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {
+              "id": "68a5895baae5cfb2c9acb956",
+              "name": "Takeaway"
+            },
+            "owner": {
+              "_id": "6ad7b8836f76ee37aac426da",
+              "name": "Keith"
+            },
+            "balanceBefore": 0,
+            "balanceAfter": 222.51,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T06:05:28.883Z",
+          "operation": "addOrderItems",
+          "salesOrderId": "6ae828288b8bcaf8a0679ad0",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "AddItemToSalesOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {},
+                "after": {},
+                "lineId": "966e2289-a291-518d-7c45-4b951237e54e"
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 222.51,
+            "balanceAfter": 222.51,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T06:06:16.258Z",
+          "operation": "setSalesOrderStatus",
+          "salesOrderId": "6ae828288b8bcaf8a0679ad0",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "SubtotalSaleOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 222.51,
+            "balanceAfter": 222.51,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T06:06:16.258Z",
+          "operation": "setAllStatus",
+          "salesOrderId": "6ae828288b8bcaf8a0679ad0",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "SubtotalSaleOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {
+                  "status": "UNCOMMITTED"
+                },
+                "after": {
+                  "status": "COMMITTED"
+                },
+                "lineId": "966e2289-a291-518d-7c45-4b951237e54e",
+                "addOnsPriceIncl": 0,
+                "addOnsDiscountAmount": 0
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 222.51,
+            "balanceAfter": 222.51,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T06:06:26.219Z",
+          "operation": "updateSalesOrder",
+          "salesOrderId": "6ae828288b8bcaf8a0679ad0",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCard",
+          "source": "processPayment",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 222.51,
+            "balanceAfter": -0.01,
+            "payments": [
+              {
+                "id": "6a44c69eebb6e30394e06e28",
+                "name": "Back Up Swipe  machine ZWG",
+                "amount": 222.51000000000002,
+                "actualTender": 222.52
+              }
+            ]
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T06:06:33.392Z",
+          "operation": "updateSalesOrder",
+          "salesOrderId": "6ae828288b8bcaf8a0679ad0",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCard",
+          "source": "beforeTenderValidation",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": -0.01,
+            "balanceAfter": -0.01,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T06:06:37.256Z",
+          "operation": "setSalesOrderStatus",
+          "salesOrderId": "6ae828288b8bcaf8a0679ad0",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCard",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": -0.01,
+            "balanceAfter": -0.01,
+            "payments": []
+          }
+        }
+      ],
+      "forex": {
+        "baseCurrency": {
+          "forexId": "6944ec3c5050152bc377dc42",
+          "currency": "USD",
+          "fromBaseToForeign": 1,
+          "toBaseFromForeign": 1,
+          "customFromBaseToForeign": 1,
+          "customToBaseFromForeign": 1,
+          "difference": 0
+        },
+        "selectedCurrency": {
+          "forexId": "6a44c6d2ebb6e30394e06e2a",
+          "currency": "ZWG",
+          "fromBaseToForeign": 26.688,
+          "toBaseFromForeign": 0.03747002398081535,
+          "customFromBaseToForeign": 0.03333333333333333,
+          "customToBaseFromForeign": 30,
+          "difference": 0
+        },
+        "forexRates": [
+          {
+            "forexId": "6944ec3c5050152bc377dc42",
+            "currency": "USD",
+            "fromBaseToForeign": 1,
+            "toBaseFromForeign": 1,
+            "customFromBaseToForeign": 1,
+            "customToBaseFromForeign": 1,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6d2ebb6e30394e06e2a",
+            "currency": "ZWG",
+            "fromBaseToForeign": 26.688,
+            "toBaseFromForeign": 0.03747002398081535,
+            "customFromBaseToForeign": 0.03333333333333333,
+            "customToBaseFromForeign": 30,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6ddebb6e30394e06e2b",
+            "currency": "ZAR",
+            "fromBaseToForeign": 16.390219,
+            "toBaseFromForeign": 0.06101199746019258,
+            "customFromBaseToForeign": 0.0625,
+            "customToBaseFromForeign": 16,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6f5ebb6e30394e06e2c",
+            "currency": "GBP",
+            "fromBaseToForeign": 0.7470499999999999,
+            "toBaseFromForeign": 1.3385984873837091,
+            "customFromBaseToForeign": 1.3333333333333333,
+            "customToBaseFromForeign": 0.75,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c711ebb6e30394e06e2d",
+            "currency": "BWP",
+            "fromBaseToForeign": 13.700642,
+            "toBaseFromForeign": 0.07298928035635119,
+            "customFromBaseToForeign": 0.07352941176470588,
+            "customToBaseFromForeign": 13.6,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c733ebb6e30394e06e2e",
+            "currency": "EUR",
+            "fromBaseToForeign": 0.890535,
+            "toBaseFromForeign": 1.1229204916145912,
+            "customFromBaseToForeign": 1.1627906976744187,
+            "customToBaseFromForeign": 0.86,
+            "difference": 0
+          }
+        ]
+      },
+      "node": "SIMBISA FIFE STR - CHICKEN INN",
+      "adminNode": "Simbisa Zimbabwe Chicken Inn",
+      "adminNodeId": "6af2b9234bf46cd19ed3d7a3"
+    },
+    {
+      "_id": "6ae86750350a4d4436a1573d",
+      "createdDate": "2026-11-02T10:34:56.126Z",
+      "updatedDate": "2026-11-02T10:36:43.076Z",
+      "nodeId": "6ad5e7c56f76ee37aab7f683",
+      "status": "TENDERED",
+      "lastStatus": "SUBTOTALED",
+      "invoiceNumber": "002_00001863",
+      "lastTerminalNumber": 2,
+      "isNegative": false,
+      "closedDate": "2026-11-02T10:36:42.572Z",
+      "location": {
+        "id": "6944ec294e221773fbaeb324",
+        "name": "Default Location"
+      },
+      "guestCount": 1,
+      "orderNumber": "2662",
+      "onlineCustomer": {},
+      "onlineOrderHeader": {
+        "deliveryTime": null,
+        "totalValue": 0
+      },
+      "customer": {},
+      "owner": {
+        "id": "6ad7b8836f76ee37aac426da",
+        "name": "Keith"
+      },
+      "printCounts": {
+        "invoice": 0,
+        "proforma": 0
+      },
+      "items": [
+        {
+          "lineId": "f1151f74-5ab0-5584-6dd8-146582e3e357",
+          "qty": 1,
+          "productTotals": {
+            "turnover": 457.64,
+            "nonTurnover": 0,
+            "tax": 61.41489177489177
+          },
+          "lineTotals": {
+            "turnover": 457.64,
+            "nonTurnover": 0,
+            "tax": 61.414891775
+          },
+          "product": {
+            "_id": "697753ee485d5a79aefb9bbf",
+            "primaryCode": "ZWCHC30CHX142S00",
+            "name": "Fastjet",
+            "kitchenDescription": "Fastjet",
+            "printerDescription": "Fastjet",
+            "posTypes": "8",
+            "sellingInclusive": 0,
+            "taxRateId": "6944ec3c5050152bc377dc27",
+            "taxRateAmount": 1.155,
+            "pricing": {
+              "hqCost": 0,
+              "lastCost": 0,
+              "averageCost": 0,
+              "salesTaxType": "6944ec3c5050152bc377dc27",
+              "costToUse": "lastCost"
+            },
+            "departments": [
+              {
+                "group": "POS Department",
+                "groupId": "695e69e9e63aa8744f18138a",
+                "departmentId": "695e6cb1a2c102b8b3731e1b",
+                "department": "Fastjet"
+              },
+              {
+                "group": "Reporting Department",
+                "groupId": "69663a5be63aa8744f227d3c",
+                "departmentId": "69663a1530b22daed247b3c8",
+                "department": "POS"
+              }
+            ]
+          },
+          "discountAmount": 0,
+          "discountPercentage": 0,
+          "note": "Booking #77445805",
+          "addOns": [],
+          "employee": {
+            "id": "6ad7b8836f76ee37aac426da",
+            "name": "Keith"
+          },
+          "addedTime": "2026-11-02T10:34:17.217Z",
+          "priceExcl": 3.0303030303030303,
+          "priceIncl": "457.64",
+          "orderItemSummary": "Booking #77445805",
+          "salesOrderTag": {
+            "id": "68a5895baae5cfb2c9acb956"
+          },
+          "pricingOption": {
+            "id": "basePrice",
+            "name": "Base Price"
+          },
+          "addOnsPriceIncl": 0,
+          "addOnsDiscountAmount": 0,
+          "promoDiscountAmount": 0,
+          "activePromotion": {
+            "discountAmount": 0
+          }
+        }
+      ],
+      "deletedItems": [],
+      "promotions": [],
+      "payments": [
+        {
+          "amount": 457.64,
+          "actualTender": 500,
+          "tip": 0,
+          "changeGiven": 42.36,
+          "name": "Cash USD",
+          "paymentMethodId": "6944ec3c5050152bc377dc2b"
+        }
+      ],
+      "totals": {
+        "turnover": 457.64,
+        "nonTurnover": 0,
+        "tax": 61.414891775,
+        "tip": 0,
+        "finalDiscount": 0
+      },
+      "saleType": {
+        "id": "68a5895baae5cfb2c9acb956",
+        "name": "Takeaway"
+      },
+      "sourced": null,
+      "associatedActivities": [
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:34:56.126Z",
+          "operation": "newSalesOrder",
+          "salesOrderId": "6ae86750350a4d4436a1573d",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "AddItemToSalesOrder",
+          "details": {
+            "destination": {
+              "guestCount": 1,
+              "orderNumber": "2662"
+            },
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {
+              "id": "68a5895baae5cfb2c9acb956",
+              "name": "Takeaway"
+            },
+            "owner": {
+              "_id": "6ad7b8836f76ee37aac426da",
+              "name": "Keith"
+            },
+            "balanceBefore": 0,
+            "balanceAfter": 457.64,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:34:56.126Z",
+          "operation": "addOrderItems",
+          "salesOrderId": "6ae86750350a4d4436a1573d",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "AddItemToSalesOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {},
+                "after": {},
+                "lineId": "f1151f74-5ab0-5584-6dd8-146582e3e357"
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 457.64,
+            "balanceAfter": 457.64,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:36:19.295Z",
+          "operation": "setSalesOrderStatus",
+          "salesOrderId": "6ae86750350a4d4436a1573d",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "SubtotalSaleOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 457.64,
+            "balanceAfter": 457.64,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:36:19.295Z",
+          "operation": "setAllStatus",
+          "salesOrderId": "6ae86750350a4d4436a1573d",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "SubtotalSaleOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {
+                  "status": "UNCOMMITTED"
+                },
+                "after": {
+                  "status": "COMMITTED"
+                },
+                "lineId": "f1151f74-5ab0-5584-6dd8-146582e3e357",
+                "addOnsPriceIncl": 0,
+                "addOnsDiscountAmount": 0
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 457.64,
+            "balanceAfter": 457.64,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:36:33.991Z",
+          "operation": "updateSalesOrder",
+          "salesOrderId": "6ae86750350a4d4436a1573d",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "source": "processPayment",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 457.64,
+            "balanceAfter": -42.36,
+            "payments": [
+              {
+                "id": "6944ec3c5050152bc377dc2b",
+                "name": "Cash USD",
+                "amount": 457.64,
+                "actualTender": 500
+              }
+            ]
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:36:42.572Z",
+          "operation": "setSalesOrderStatus",
+          "salesOrderId": "6ae86750350a4d4436a1573d",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": -42.36,
+            "balanceAfter": -42.36,
+            "payments": []
+          }
+        }
+      ],
+      "forex": {
+        "baseCurrency": {
+          "forexId": "6944ec3c5050152bc377dc42",
+          "currency": "USD",
+          "fromBaseToForeign": 1,
+          "toBaseFromForeign": 1,
+          "customFromBaseToForeign": 1,
+          "customToBaseFromForeign": 1,
+          "difference": 0
+        },
+        "selectedCurrency": {
+          "forexId": "6944ec3c5050152bc377dc42",
+          "currency": "USD",
+          "fromBaseToForeign": 1,
+          "toBaseFromForeign": 1,
+          "customFromBaseToForeign": 1,
+          "customToBaseFromForeign": 1,
+          "difference": 0
+        },
+        "forexRates": [
+          {
+            "forexId": "6944ec3c5050152bc377dc42",
+            "currency": "USD",
+            "fromBaseToForeign": 1,
+            "toBaseFromForeign": 1,
+            "customFromBaseToForeign": 1,
+            "customToBaseFromForeign": 1,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6d2ebb6e30394e06e2a",
+            "currency": "ZWG",
+            "fromBaseToForeign": 26.688,
+            "toBaseFromForeign": 0.03747002398081535,
+            "customFromBaseToForeign": 0.03333333333333333,
+            "customToBaseFromForeign": 30,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6ddebb6e30394e06e2b",
+            "currency": "ZAR",
+            "fromBaseToForeign": 16.390219,
+            "toBaseFromForeign": 0.06101199746019258,
+            "customFromBaseToForeign": 0.0625,
+            "customToBaseFromForeign": 16,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6f5ebb6e30394e06e2c",
+            "currency": "GBP",
+            "fromBaseToForeign": 0.7470499999999999,
+            "toBaseFromForeign": 1.3385984873837091,
+            "customFromBaseToForeign": 1.3333333333333333,
+            "customToBaseFromForeign": 0.75,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c711ebb6e30394e06e2d",
+            "currency": "BWP",
+            "fromBaseToForeign": 13.700642,
+            "toBaseFromForeign": 0.07298928035635119,
+            "customFromBaseToForeign": 0.07352941176470588,
+            "customToBaseFromForeign": 13.6,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c733ebb6e30394e06e2e",
+            "currency": "EUR",
+            "fromBaseToForeign": 0.890535,
+            "toBaseFromForeign": 1.1229204916145912,
+            "customFromBaseToForeign": 1.1627906976744187,
+            "customToBaseFromForeign": 0.86,
+            "difference": 0
+          }
+        ]
+      },
+      "node": "SIMBISA FIFE STR - CHICKEN INN",
+      "adminNode": "Simbisa Zimbabwe Chicken Inn",
+      "adminNodeId": "6af2b9234bf46cd19ed3d7a3"
+    },
+    {
+      "_id": "6ae867ea1cb8ad5d4d03cfb5",
+      "createdDate": "2026-11-02T10:37:30.729Z",
+      "updatedDate": "2026-11-02T10:38:54.770Z",
+      "nodeId": "6ad5e7c56f76ee37aab7f683",
+      "status": "TENDERED",
+      "lastStatus": "SUBTOTALED",
+      "invoiceNumber": "002_00001864",
+      "lastTerminalNumber": 2,
+      "isNegative": false,
+      "closedDate": "2026-11-02T10:38:54.266Z",
+      "location": {
+        "id": "6944ec294e221773fbaeb324",
+        "name": "Default Location"
+      },
+      "guestCount": 1,
+      "orderNumber": "2663",
+      "onlineCustomer": {},
+      "onlineOrderHeader": {
+        "deliveryTime": null,
+        "totalValue": 0
+      },
+      "customer": {},
+      "owner": {
+        "id": "6ad7b8836f76ee37aac426da",
+        "name": "Keith"
+      },
+      "printCounts": {
+        "invoice": 0,
+        "proforma": 0
+      },
+      "items": [
+        {
+          "lineId": "66675506-3e43-f32c-5806-eb147840ea23",
+          "qty": 1,
+          "productTotals": {
+            "turnover": 457.64,
+            "nonTurnover": 0,
+            "tax": 61.41489177489177
+          },
+          "lineTotals": {
+            "turnover": 457.64,
+            "nonTurnover": 0,
+            "tax": 61.414891775
+          },
+          "product": {
+            "_id": "697753ee485d5a79aefb9bbf",
+            "primaryCode": "ZWCHC30CHX142S00",
+            "name": "Fastjet",
+            "kitchenDescription": "Fastjet",
+            "printerDescription": "Fastjet",
+            "posTypes": "8",
+            "sellingInclusive": 0,
+            "taxRateId": "6944ec3c5050152bc377dc27",
+            "taxRateAmount": 1.155,
+            "pricing": {
+              "hqCost": 0,
+              "lastCost": 0,
+              "averageCost": 0,
+              "salesTaxType": "6944ec3c5050152bc377dc27",
+              "costToUse": "lastCost"
+            },
+            "departments": [
+              {
+                "group": "POS Department",
+                "groupId": "695e69e9e63aa8744f18138a",
+                "departmentId": "695e6cb1a2c102b8b3731e1b",
+                "department": "Fastjet"
+              },
+              {
+                "group": "Reporting Department",
+                "groupId": "69663a5be63aa8744f227d3c",
+                "departmentId": "69663a1530b22daed247b3c8",
+                "department": "POS"
+              }
+            ]
+          },
+          "discountAmount": 0,
+          "discountPercentage": 0,
+          "note": "Booking #26256246",
+          "addOns": [],
+          "employee": {
+            "id": "6ad7b8836f76ee37aac426da",
+            "name": "Keith"
+          },
+          "addedTime": "2026-11-02T10:37:10.544Z",
+          "priceExcl": 3.0303030303030303,
+          "priceIncl": "457.64",
+          "orderItemSummary": "Booking #26256246",
+          "salesOrderTag": {
+            "id": "68a5895baae5cfb2c9acb956"
+          },
+          "pricingOption": {
+            "id": "basePrice",
+            "name": "Base Price"
+          },
+          "addOnsPriceIncl": 0,
+          "addOnsDiscountAmount": 0,
+          "promoDiscountAmount": 0,
+          "activePromotion": {
+            "discountAmount": 0
+          }
+        }
+      ],
+      "deletedItems": [],
+      "promotions": [],
+      "payments": [
+        {
+          "amount": 457.64,
+          "actualTender": 462.36,
+          "tip": 0,
+          "changeGiven": 4.72,
+          "name": "Cash USD",
+          "paymentMethodId": "6944ec3c5050152bc377dc2b"
+        }
+      ],
+      "totals": {
+        "turnover": 457.64,
+        "nonTurnover": 0,
+        "tax": 61.414891775,
+        "tip": 0,
+        "finalDiscount": 0
+      },
+      "saleType": {
+        "id": "68a5895baae5cfb2c9acb956",
+        "name": "Takeaway"
+      },
+      "sourced": null,
+      "associatedActivities": [
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:37:30.729Z",
+          "operation": "newSalesOrder",
+          "salesOrderId": "6ae867ea1cb8ad5d4d03cfb5",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "AddItemToSalesOrder",
+          "details": {
+            "destination": {
+              "guestCount": 1,
+              "orderNumber": "2663"
+            },
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {
+              "id": "68a5895baae5cfb2c9acb956",
+              "name": "Takeaway"
+            },
+            "owner": {
+              "_id": "6ad7b8836f76ee37aac426da",
+              "name": "Keith"
+            },
+            "balanceBefore": 0,
+            "balanceAfter": 457.64,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:37:30.729Z",
+          "operation": "addOrderItems",
+          "salesOrderId": "6ae867ea1cb8ad5d4d03cfb5",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "AddItemToSalesOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {},
+                "after": {},
+                "lineId": "66675506-3e43-f32c-5806-eb147840ea23"
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 457.64,
+            "balanceAfter": 457.64,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:38:18.566Z",
+          "operation": "setSalesOrderStatus",
+          "salesOrderId": "6ae867ea1cb8ad5d4d03cfb5",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "SubtotalSaleOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 457.64,
+            "balanceAfter": 457.64,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:38:18.566Z",
+          "operation": "setAllStatus",
+          "salesOrderId": "6ae867ea1cb8ad5d4d03cfb5",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "SubtotalSaleOrder",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [
+              {
+                "product": {
+                  "id": "697753ee485d5a79aefb9bbf",
+                  "name": "Fastjet"
+                },
+                "itemPriceIncl": 3.5,
+                "qty": 1,
+                "before": {
+                  "status": "UNCOMMITTED"
+                },
+                "after": {
+                  "status": "COMMITTED"
+                },
+                "lineId": "66675506-3e43-f32c-5806-eb147840ea23",
+                "addOnsPriceIncl": 0,
+                "addOnsDiscountAmount": 0
+              }
+            ],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 457.64,
+            "balanceAfter": 457.64,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:38:42.133Z",
+          "operation": "updateSalesOrder",
+          "salesOrderId": "6ae867ea1cb8ad5d4d03cfb5",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "source": "processPayment",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": 457.64,
+            "balanceAfter": -4.72,
+            "payments": [
+              {
+                "id": "6944ec3c5050152bc377dc2b",
+                "name": "Cash USD",
+                "amount": 457.64,
+                "actualTender": 462.36
+              }
+            ]
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:38:52.140Z",
+          "operation": "updateSalesOrder",
+          "salesOrderId": "6ae867ea1cb8ad5d4d03cfb5",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "source": "beforeTenderValidation",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": -4.72,
+            "balanceAfter": -4.72,
+            "payments": []
+          }
+        },
+        {
+          "loggedInUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "onntty": "sales-orders-open",
+          "timeStamp": "2026-11-02T10:38:54.266Z",
+          "operation": "setSalesOrderStatus",
+          "salesOrderId": "6ae867ea1cb8ad5d4d03cfb5",
+          "securityAuthUser": {
+            "_id": "6ad7b8836f76ee37aac426da",
+            "firstName": "Keith",
+            "impersonator": {}
+          },
+          "securityKey": "TenderCash",
+          "details": {
+            "destination": {},
+            "before": {},
+            "after": {},
+            "items": [],
+            "itemsReplaced": {
+              "originalItems": [],
+              "newItems": []
+            },
+            "type": {},
+            "owner": {},
+            "balanceBefore": -4.72,
+            "balanceAfter": -4.72,
+            "payments": []
+          }
+        }
+      ],
+      "forex": {
+        "baseCurrency": {
+          "forexId": "6944ec3c5050152bc377dc42",
+          "currency": "USD",
+          "fromBaseToForeign": 1,
+          "toBaseFromForeign": 1,
+          "customFromBaseToForeign": 1,
+          "customToBaseFromForeign": 1,
+          "difference": 0
+        },
+        "selectedCurrency": {
+          "forexId": "6944ec3c5050152bc377dc42",
+          "currency": "USD",
+          "fromBaseToForeign": 1,
+          "toBaseFromForeign": 1,
+          "customFromBaseToForeign": 1,
+          "customToBaseFromForeign": 1,
+          "difference": 0
+        },
+        "forexRates": [
+          {
+            "forexId": "6944ec3c5050152bc377dc42",
+            "currency": "USD",
+            "fromBaseToForeign": 1,
+            "toBaseFromForeign": 1,
+            "customFromBaseToForeign": 1,
+            "customToBaseFromForeign": 1,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6d2ebb6e30394e06e2a",
+            "currency": "ZWG",
+            "fromBaseToForeign": 26.688,
+            "toBaseFromForeign": 0.03747002398081535,
+            "customFromBaseToForeign": 0.03333333333333333,
+            "customToBaseFromForeign": 30,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6ddebb6e30394e06e2b",
+            "currency": "ZAR",
+            "fromBaseToForeign": 16.390219,
+            "toBaseFromForeign": 0.06101199746019258,
+            "customFromBaseToForeign": 0.0625,
+            "customToBaseFromForeign": 16,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c6f5ebb6e30394e06e2c",
+            "currency": "GBP",
+            "fromBaseToForeign": 0.7470499999999999,
+            "toBaseFromForeign": 1.3385984873837091,
+            "customFromBaseToForeign": 1.3333333333333333,
+            "customToBaseFromForeign": 0.75,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c711ebb6e30394e06e2d",
+            "currency": "BWP",
+            "fromBaseToForeign": 13.700642,
+            "toBaseFromForeign": 0.07298928035635119,
+            "customFromBaseToForeign": 0.07352941176470588,
+            "customToBaseFromForeign": 13.6,
+            "difference": 0
+          },
+          {
+            "forexId": "6a44c733ebb6e30394e06e2e",
+            "currency": "EUR",
+            "fromBaseToForeign": 0.890535,
+            "toBaseFromForeign": 1.1229204916145912,
+            "customFromBaseToForeign": 1.1627906976744187,
+            "customToBaseFromForeign": 0.86,
+            "difference": 0
+          }
+        ]
+      },
+      "node": "SIMBISA FIFE STR - CHICKEN INN",
+      "adminNode": "Simbisa Zimbabwe Chicken Inn",
+      "adminNodeId": "6af2b9234bf46cd19ed3d7a3"
+    }
+  ]
+}

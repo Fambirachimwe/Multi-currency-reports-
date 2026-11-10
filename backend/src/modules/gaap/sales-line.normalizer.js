@@ -220,6 +220,9 @@ function readSaleHeader(sale) {
     currencySource: {
       selectedCurrency: nonBlankString(sale.forex?.selectedCurrency?.currency),
       baseCurrency: nonBlankString(sale.forex?.baseCurrency?.currency),
+      // Rate of the SELECTED currency, taken from the matching `forex.forexRates[]` entry
+      // (owner decision 2026-11-10): base turnover x its `fromBaseToForeign` (26.688 for ZWG; owner-verified 2026-11-10).
+      selectedRate: readSelectedRate(sale.forex),
     },
   };
 }
@@ -418,6 +421,23 @@ function flagCurrencyFields({ selectedCurrency, baseCurrency }, flag) {
 function flagInstant(instant, flag, field, codes) {
   if (instant.problem === 'missing') flag(codes.missing, field);
   if (instant.problem === 'invalid') flag(codes.invalid, field);
+}
+
+/** `fromBaseToForeign` of the `forexRates` entry whose currency is the selected one, else null. */
+function readSelectedRate(forex) {
+  const selected = nonBlankString(forex?.selectedCurrency?.currency)?.trim().toUpperCase();
+  if (!selected || !Array.isArray(forex?.forexRates)) return null;
+  const entry = forex.forexRates.find(
+    (rate) => typeof rate?.currency === 'string' && rate.currency.trim().toUpperCase() === selected,
+  );
+  return readRate(entry?.fromBaseToForeign);
+}
+
+/** Positive decimal text or null (a missing, zero, negative or unreadable rate is never guessed). */
+function readRate(value) {
+  if (value === undefined || value === null) return null;
+  const text = toDecimalString(value);
+  return text !== null && decimalSign(text) === 1 ? text : null;
 }
 
 function nonBlankString(value) {
