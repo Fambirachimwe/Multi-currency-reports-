@@ -221,7 +221,7 @@ function readSaleHeader(sale) {
       selectedCurrency: nonBlankString(sale.forex?.selectedCurrency?.currency),
       baseCurrency: nonBlankString(sale.forex?.baseCurrency?.currency),
       // Rate of the SELECTED currency, taken from the matching `forex.forexRates[]` entry
-      // (owner decision 2026-11-10): base turnover x its `fromBaseToForeign` (26.688 for ZWG; owner-verified 2026-11-10).
+      // (owner decision 2026-11-11, replacing 2026-11-10): base turnover x its `customToBaseFromForeign` (30 for ZWG).
       selectedRate: readSelectedRate(sale.forex),
     },
   };
@@ -423,14 +423,18 @@ function flagInstant(instant, flag, field, codes) {
   if (instant.problem === 'invalid') flag(codes.invalid, field);
 }
 
-/** `fromBaseToForeign` of the `forexRates` entry whose currency is the selected one, else null. */
+/**
+ * `customToBaseFromForeign` of the `forexRates` entry whose currency is the selected one, else null.
+ * Despite its name this is the business's custom amount of that currency per 1 base unit (ZWG 30,
+ * ZAR 16, GBP 0.75), so base turnover is MULTIPLIED by it (owner decision 2026-11-11).
+ */
 function readSelectedRate(forex) {
   const selected = nonBlankString(forex?.selectedCurrency?.currency)?.trim().toUpperCase();
   if (!selected || !Array.isArray(forex?.forexRates)) return null;
   const entry = forex.forexRates.find(
     (rate) => typeof rate?.currency === 'string' && rate.currency.trim().toUpperCase() === selected,
   );
-  return readRate(entry?.fromBaseToForeign);
+  return readRate(entry?.customToBaseFromForeign);
 }
 
 /** Positive decimal text or null (a missing, zero, negative or unreadable rate is never guessed). */

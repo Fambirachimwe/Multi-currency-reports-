@@ -515,6 +515,26 @@ describe('currency fields are carried, not classified', () => {
     assert.equal('currency' in line, false, 'no resolved currency exists before Feature 16');
   });
 
+  it('reads the selected currency rate from customToBaseFromForeign, not the market rate', () => {
+    const forex = {
+      ...fixtureForex('ZWG', 'USD'),
+      forexRates: [
+        { currency: 'USD', fromBaseToForeign: 1, customToBaseFromForeign: 1 },
+        { currency: 'ZWG', fromBaseToForeign: 26.688, customToBaseFromForeign: 30 },
+        { currency: 'ZAR', fromBaseToForeign: 16.390219, customToBaseFromForeign: 16 },
+      ],
+    };
+    const line = one(fixtureRawSale('s1', [fixtureRawLine('l1')], { forex }));
+    assert.equal(line.currencySource.selectedRate, '30');
+
+    const noCustom = one(
+      fixtureRawSale('s2', [fixtureRawLine('l1')], {
+        forex: { ...forex, forexRates: [{ currency: 'ZWG', fromBaseToForeign: 26.688 }] },
+      }),
+    );
+    assert.equal(noCustom.currencySource.selectedRate, null, 'no fallback to the market rate');
+  });
+
   it('flags a missing currency field and never defaults it to USD', () => {
     const noSelected = one(
       fixtureRawSale('s1', [fixtureRawLine('l1')], { forex: fixtureForex(undefined, 'USD') }),

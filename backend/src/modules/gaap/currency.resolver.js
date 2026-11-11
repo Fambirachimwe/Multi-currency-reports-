@@ -115,7 +115,7 @@ export function resolveCurrency(currencySource, options = {}) {
   }
   if (policy === DIFFERING_CURRENCY_POLICIES.SELECTED) {
     // Owner decision (2026-11-10): report in the SELECTED currency. Base turnover is multiplied by
-    // the selected currency's `fromBaseToForeign` (from forexRates); without a usable rate nothing is guessed.
+    // the selected currency's `customToBaseFromForeign` (from forexRates); without a usable rate nothing is guessed.
     const rate =
       typeof currencySource?.selectedRate === 'string' ? currencySource.selectedRate : null;
     // Owner decision (2026-11-10): no usable rate -> fall back to the base currency, unconverted.

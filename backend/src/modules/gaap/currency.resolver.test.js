@@ -241,15 +241,15 @@ describe('classifyLineCurrencies', () => {
   });
 });
 
-describe('selected currency conversion (owner decision 2026-11-10)', () => {
-  it('converts base turnover to the selected currency: 222.51 x 26.688 = 5938.35', () => {
+describe('selected currency conversion (owner decision 2026-11-11)', () => {
+  it('converts base turnover to the selected currency: 222.51 x 30 = 6675.3', () => {
     const line = {
       turnover: '222.51',
-      currencySource: { selectedCurrency: 'ZWG', baseCurrency: 'USD', selectedRate: '26.688' },
+      currencySource: { selectedCurrency: 'ZWG', baseCurrency: 'USD', selectedRate: '30' },
     };
     const [out] = classifyLineCurrencies([line]).lines;
     assert.equal(out.currency, 'ZWG');
-    assert.equal(out.turnover, '5938.34688');
+    assert.equal(out.turnover, '6675.3');
     assert.equal(out.baseTurnover, '222.51');
   });
 

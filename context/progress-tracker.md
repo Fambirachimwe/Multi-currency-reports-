@@ -7,7 +7,11 @@ change.
 
 - Features 09–20 approved by the user (2026-11-08). Feature 21 (Save Immutable Report Snapshot) approved by the user (2026-11-08); its open items and decisions are deferred to a clean-up pass once all feature specs are done. Feature 22 (Saved Reports List) approved by the user (2026-11-08). Feature 23 (Report Summary View) implemented 2026-11-08, awaiting approval. Feature 24 (Report Detail Table) approved by the user (2026-11-08).
 
-## Currency decision (owner, 2026-11-10)
+## Currency decision update (owner, 2026-11-11) — supersedes the rate field below
+
+The rate used for conversion is now the selected currency's `customToBaseFromForeign` (ZWG 30, ZAR 16, GBP 0.75, BWP 13.6, EUR 0.86), no longer `fromBaseToForeign` (26.688 for ZWG). Despite its name the field holds the custom amount of that currency per 1 USD, so base turnover is multiplied by it: 222.51 x 30 = 6675.3. A missing or unusable `customToBaseFromForeign` falls back to the base currency, unconverted (it does NOT fall back to the market rate). Changed: `readSelectedRate` in `sales-line.normalizer.js` (one field), comments in `currency.resolver.js`; tests: `currency.resolver.test.js` (30, 6675.3) and a new normalizer test for the field and no-fallback. `node --test` on the normalizer and resolver tests: 75/75 pass. Not run: full `npm test`, lint, live GAAP. Saved reports keep their old figures; generate a new one. The 2026-11-10 note below said 26.688 was owner-verified against a real sale; this reverses it at the user's request.
+
+## Currency decision (owner, 2026-11-10) — superseded on the rate field, see above
 
 - GAAP stores sales in the BASE currency (USD); `selectedCurrency` says which currency the customer chose. When selected differs from base, reports use the SELECTED currency: turnover = base turnover x `fromBaseToForeign` of the matching `forex.forexRates[]` entry, 26.688 for ZWG (owner-verified against a real sale; NOT `customToBaseFromForeign`, which was 30) (exact decimal, no rounding; original kept as `baseTurnover`). Example: 222.51 x 26.688 = 5938.34688 (shown as 5938.35). A missing or unusable rate falls back to the base currency, unconverted. Policy `selected` is the new default in `currency.resolver.js`; `base` and `unknown` remain. Tax is not saved on rows or totals, so only turnover is converted. Saved reports keep their old classification, so generate a new one. Tests updated; not verified against live GAAP.
 
